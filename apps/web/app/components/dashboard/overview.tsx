@@ -1,8 +1,13 @@
 'use client'
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { VisAxis, VisStackedBar, VisXYContainer } from '@unovis/react'
 
-const data = [
+interface DataRecord {
+	name: string
+	total: number
+}
+
+const data: DataRecord[] = [
 	{
 		name: 'Jan',
 		total: Math.floor(Math.random() * 5000) + 1000,
@@ -53,31 +58,37 @@ const data = [
 	},
 ]
 
+const x = (_d: DataRecord, i: number) => i
+const y = (d: DataRecord) => d.total
+
 export function Overview() {
 	return (
-		<ResponsiveContainer width="100%" height={350}>
-			<BarChart data={data}>
-				<XAxis
-					dataKey="name"
-					stroke="#888888"
-					fontSize={12}
-					tickLine={false}
-					axisLine={false}
-				/>
-				<YAxis
-					stroke="#888888"
-					fontSize={12}
-					tickLine={false}
-					axisLine={false}
-					tickFormatter={(value) => `$${value}`}
-				/>
-				<Bar
-					dataKey="total"
-					fill="currentColor"
-					radius={[4, 4, 0, 0]}
-					className="fill-primary"
-				/>
-			</BarChart>
-		</ResponsiveContainer>
+		<VisXYContainer height={350} data={data}>
+			<VisStackedBar
+				x={x}
+				y={y}
+				color="#222"
+				roundedCorners={4}
+				barPadding={0.15}
+			/>
+			<VisAxis
+				type="x"
+				numTicks={data.length}
+				tickFormat={(_: number | Date, i: number) => data[i].name}
+				gridLine={false}
+				tickLine={false}
+				domainLine={false}
+				color="#888"
+			/>
+			<VisAxis
+				type="y"
+				numTicks={data.length}
+				tickFormat={(d) => `$${d}`}
+				gridLine={false}
+				tickLine={false}
+				domainLine={false}
+				color="#888"
+			/>
+		</VisXYContainer>
 	)
 }
