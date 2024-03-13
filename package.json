@@ -9,7 +9,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
+    "@repo/biome-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
