@@ -1,0 +1,41 @@
+{
+	"name": "@repo/utils",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/**"
+	],
+	"scripts": {
+		"dev": "tsup --watch",
+		"build": "tsup",
+		"lint": "pnpm dlx @biomejs/biome check ./src --apply",
+		"format": "pnpm dlx @biomejs/biome format ./src --write",
+		"check-types": "tsc --noEmit",
+		"update": "pnpm dlx npm-check-updates -ui"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@repo/biome-config": "workspace:*",
+		"@repo/typescript-config": "workspace:*",
+		"@types/js-cookie": "^3.0.6",
+		"@types/react": "^18.2.70",
+		"react": "^18.2.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.3"
+	},
+	"dependencies": {
+		"@types/ms": "^0.7.34",
+		"js-cookie": "^3.0.5",
+		"ms": "^2.1.3"
+	}
+}

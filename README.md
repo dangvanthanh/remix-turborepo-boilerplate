@@ -9,8 +9,10 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 ### Apps and Packages
 
 - `web` - Remix app with port is `3000`
-- `@repo/biome-config` - Biome config for the repo
-- `@repo/typescript-config` - TypeScript config for the repo
+- `ui` - Ui components
+- `utils` - Utility functions and constants
+- `biome-config` - Biome config for the repo
+- `typescript-config` - TypeScript config for the repo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
