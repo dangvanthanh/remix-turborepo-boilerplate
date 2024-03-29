@@ -19,6 +19,7 @@ export function MainNav({
 		>
 			{navs.map((nav) => (
 				<NavLink
+					key={nav.name}
 					to={nav.url}
 					className={`text-sm font-medium transition-colors hover:text-primary ${
 						nav.active ? '' : 'text-muted-foreground'
