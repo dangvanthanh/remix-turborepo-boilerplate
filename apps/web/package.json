@@ -56,11 +56,12 @@
 		"input-otp": "^1.2.3",
 		"isbot": "^5.1.2",
 		"lucide-react": "^0.363.0",
+		"million": "^3.0.6",
 		"next-themes": "^0.3.0",
 		"react": "^18.2.0",
 		"react-day-picker": "^8.10.0",
 		"react-dom": "^18.2.0",
-		"react-hook-form": "^7.51.1",
+		"react-hook-form": "^7.51.2",
 		"react-resizable-panels": "^2.0.16",
 		"sonner": "^1.4.41",
 		"tailwind-merge": "^2.2.2",
@@ -69,11 +70,11 @@
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
-		"@repo/biome-config": "workspace:*",
 		"@remix-run/dev": "^2.8.1",
-		"@types/react": "^18.2.70",
-		"@types/react-dom": "^18.2.22",
-		"tailwindcss": "^3.4.1",
+		"@repo/biome-config": "workspace:*",
+		"@types/react": "^18.2.73",
+		"@types/react-dom": "^18.2.23",
+		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.3"
 	},
 	"engines": {

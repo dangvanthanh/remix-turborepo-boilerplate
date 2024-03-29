@@ -7,54 +7,56 @@ interface DataRecord {
 	total: number
 }
 
+const random = () => Math.floor(Math.random() * 5000) + 1000
+
 const data: DataRecord[] = [
 	{
 		name: 'Jan',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Feb',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Mar',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Apr',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'May',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Jun',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Jul',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Aug',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Sep',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Oct',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Nov',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 	{
 		name: 'Dec',
-		total: Math.floor(Math.random() * 5000) + 1000,
+		total: random(),
 	},
 ]
 
