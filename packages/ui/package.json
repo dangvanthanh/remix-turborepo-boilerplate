@@ -28,10 +28,10 @@
 		"@repo/biome-config": "workspace:*",
 		"@repo/typescript-config": "workspace:*",
 		"@types/js-cookie": "^3.0.6",
-		"@types/react": "^18.2.75",
+		"@types/react": "^18.2.78",
 		"react": "^18.2.0",
 		"tsup": "^8.0.2",
-		"typescript": "^5.4.4"
+		"typescript": "^5.4.5"
 	},
 	"dependencies": {
 		"js-cookie": "^3.0.5"

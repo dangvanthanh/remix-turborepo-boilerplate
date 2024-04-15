@@ -52,16 +52,16 @@
 		"clsx": "^2.1.0",
 		"cmdk": "^1.0.0",
 		"date-fns": "^3.6.0",
-		"embla-carousel-react": "^8.0.1",
+		"embla-carousel-react": "^8.0.2",
 		"input-otp": "^1.2.4",
 		"isbot": "^5.1.4",
-		"lucide-react": "^0.366.0",
+		"lucide-react": "^0.368.0",
 		"million": "^3.0.6",
 		"next-themes": "^0.3.0",
 		"react": "^18.2.0",
 		"react-day-picker": "^8.10.0",
 		"react-dom": "^18.2.0",
-		"react-hook-form": "^7.51.2",
+		"react-hook-form": "^7.51.3",
 		"react-resizable-panels": "^2.0.16",
 		"sonner": "^1.4.41",
 		"tailwind-merge": "^2.2.2",
@@ -72,10 +72,10 @@
 	"devDependencies": {
 		"@remix-run/dev": "^2.8.1",
 		"@repo/biome-config": "workspace:*",
-		"@types/react": "^18.2.75",
-		"@types/react-dom": "^18.2.24",
+		"@types/react": "^18.2.78",
+		"@types/react-dom": "^18.2.25",
 		"tailwindcss": "^3.4.3",
-		"typescript": "^5.4.4"
+		"typescript": "^5.4.5"
 	},
 	"engines": {
 		"node": ">=18.0.0"
