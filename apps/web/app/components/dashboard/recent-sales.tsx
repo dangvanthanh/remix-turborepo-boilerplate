@@ -43,7 +43,7 @@ export function RecentSales() {
 	return (
 		<div className="space-y-8">
 			{recentSales.map((sale) => (
-				<div className="flex items-center">
+				<div className="flex items-center" key={sale.email}>
 					<Avatar className="flex h-9 w-9 items-center justify-center space-y-0 border">
 						<AvatarImage src={sale.avatar} alt={sale.name} />
 						<AvatarFallback>{sale.avatarFallback}</AvatarFallback>
