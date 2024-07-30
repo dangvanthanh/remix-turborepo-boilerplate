@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "remix build",
 		"dev": "remix dev --manual",
-		"lint": "pnpm dlx @biomejs/biome check ./app --apply",
+		"lint": "pnpm dlx @biomejs/biome check ./app --write",
 		"format": "pnpm dlx @biomejs/biome format ./app --write",
 		"start": "remix-serve ./build/index.js",
 		"typecheck": "tsc",

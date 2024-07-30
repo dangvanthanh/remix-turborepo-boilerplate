@@ -12,7 +12,7 @@
 	"scripts": {
 		"dev": "tsup --watch",
 		"build": "tsup",
-		"lint": "pnpm dlx @biomejs/biome check ./src --apply",
+		"lint": "pnpm dlx @biomejs/biome check ./src --write",
 		"format": "pnpm dlx @biomejs/biome format ./src --write",
 		"check-types": "tsc --noEmit",
 		"update": "pnpm dlx npm-check-updates -ui"
