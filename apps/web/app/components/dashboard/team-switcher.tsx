@@ -1,5 +1,6 @@
 'use client'
 
+import { Trans, t } from '@lingui/macro'
 import {
 	CaretSortIcon,
 	CheckIcon,
@@ -45,7 +46,7 @@ import { cn } from '~/lib/utils'
 
 const groups = [
 	{
-		label: 'Personal Account',
+		label: t`Personal Account`,
 		teams: [
 			{
 				label: 'Alicia Koch',
@@ -54,7 +55,7 @@ const groups = [
 		],
 	},
 	{
-		label: 'Teams',
+		label: t`Teams`,
 		teams: [
 			{
 				label: 'Acme Inc.',
@@ -107,8 +108,10 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 				<PopoverContent className="w-[200px] p-0">
 					<Command>
 						<CommandList>
-							<CommandInput placeholder="Search team..." />
-							<CommandEmpty>No team found.</CommandEmpty>
+							<CommandInput placeholder={`${t`Search team`}...`} />
+							<CommandEmpty>
+								<Trans>No team found.</Trans>
+							</CommandEmpty>
 							{groups.map((group) => (
 								<CommandGroup key={group.label} heading={group.label}>
 									{group.teams.map((team) => (
@@ -153,7 +156,7 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 										}}
 									>
 										<PlusCircledIcon className="mr-2 h-5 w-5" />
-										Create Team
+										<Trans>Create Team</Trans>
 									</CommandItem>
 								</DialogTrigger>
 							</CommandGroup>

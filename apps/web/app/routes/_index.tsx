@@ -77,7 +77,7 @@ export default function Index() {
 					<div className="ml-auto flex items-center space-x-4">
 						<Search />
 						<UserNav />
-            <LocaleSelector />
+						<LocaleSelector />
 					</div>
 				</div>
 			</div>
@@ -89,8 +89,8 @@ export default function Index() {
 					<div className="flex items-center space-x-2">
 						<CalendarDateRangePicker />
 						<Button>
-              <Trans>Download</Trans>
-            </Button>
+							<Trans>Download</Trans>
+						</Button>
 					</div>
 				</div>
 				<Tabs defaultValue="overview" className="space-y-4">
@@ -128,8 +128,8 @@ export default function Index() {
 							<Card className="col-span-4">
 								<CardHeader>
 									<CardTitle>
-                    <Trans>Overview</Trans>
-                  </CardTitle>
+										<Trans>Overview</Trans>
+									</CardTitle>
 								</CardHeader>
 								<CardContent className="pl-2">
 									<Overview />
@@ -138,8 +138,8 @@ export default function Index() {
 							<Card className="col-span-3">
 								<CardHeader>
 									<CardTitle>
-                    <Trans>Recent Sales</Trans>
-                  </CardTitle>
+										<Trans>Recent Sales</Trans>
+									</CardTitle>
 									<CardDescription>
 										You made 265 sales this month.
 									</CardDescription>
