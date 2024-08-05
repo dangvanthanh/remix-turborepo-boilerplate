@@ -1,3 +1,4 @@
+import { Trans, t } from '@lingui/macro'
 import type { MetaFunction } from '@remix-run/node'
 import {
 	Activity as ActivityIcon,
@@ -23,6 +24,7 @@ import {
 	CardTitle,
 } from '~/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '~/components/ui/tabs'
+import { LocaleSelector } from '~/modules/lingui/lingui'
 
 export const meta: MetaFunction = () => {
 	return [
@@ -33,33 +35,33 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	const tabs = [
-		{ name: 'Overview', value: 'overview', disabled: false },
-		{ name: 'Analytics', value: 'analytics', disabled: true },
-		{ name: 'Reports', value: 'reports', disabled: true },
-		{ name: 'Notifications', value: 'notifications', disabled: true },
+		{ name: t`Overview`, value: 'overview', disabled: false },
+		{ name: t`Analytics`, value: 'analytics', disabled: true },
+		{ name: t`Reports`, value: 'reports', disabled: true },
+		{ name: t`Notifications`, value: 'notifications', disabled: true },
 	]
 
 	const cards = [
 		{
-			title: 'Total Revenue',
+			title: t`Total Revenue`,
 			icon: <DollarSignIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '$45,231.89',
 			description: '+20.1% from last month',
 		},
 		{
-			title: 'Subscriptions',
+			title: t`Subscriptions`,
 			icon: <UsersIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+2350',
 			description: '+180.1% from last month',
 		},
 		{
-			title: 'Sales',
+			title: t`Sales`,
 			icon: <CreditCardIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+12,234',
 			description: '+19% from last month',
 		},
 		{
-			title: 'Active Now',
+			title: t`Active Now`,
 			icon: <ActivityIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+573',
 			description: '+201 since last hour',
@@ -75,15 +77,20 @@ export default function Index() {
 					<div className="ml-auto flex items-center space-x-4">
 						<Search />
 						<UserNav />
+            <LocaleSelector />
 					</div>
 				</div>
 			</div>
 			<div className="flex-1 space-y-4 p-8 pt-6">
 				<div className="flex items-center justify-between space-y-2">
-					<h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+					<h2 className="text-3xl font-bold tracking-tight">
+						<Trans>Dashboard</Trans>
+					</h2>
 					<div className="flex items-center space-x-2">
 						<CalendarDateRangePicker />
-						<Button>Download</Button>
+						<Button>
+              <Trans>Download</Trans>
+            </Button>
 					</div>
 				</div>
 				<Tabs defaultValue="overview" className="space-y-4">
@@ -120,7 +127,9 @@ export default function Index() {
 						<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
 							<Card className="col-span-4">
 								<CardHeader>
-									<CardTitle>Overview</CardTitle>
+									<CardTitle>
+                    <Trans>Overview</Trans>
+                  </CardTitle>
 								</CardHeader>
 								<CardContent className="pl-2">
 									<Overview />
@@ -128,7 +137,9 @@ export default function Index() {
 							</Card>
 							<Card className="col-span-3">
 								<CardHeader>
-									<CardTitle>Recent Sales</CardTitle>
+									<CardTitle>
+                    <Trans>Recent Sales</Trans>
+                  </CardTitle>
 									<CardDescription>
 										You made 265 sales this month.
 									</CardDescription>

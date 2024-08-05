@@ -1,20 +1,64 @@
-import type { LinksFunction } from '@remix-run/node'
+import { i18n } from '@lingui/core'
+import {
+	type ActionFunctionArgs,
+	type LinksFunction,
+	type LoaderFunctionArgs,
+	json,
+} from '@remix-run/node'
 import {
 	Links,
-	LiveReload,
 	Meta,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
 } from '@remix-run/react'
-
-import styles from '~/styles.css'
+import { useEffect } from 'react'
+import { loadCatalog, useLocale } from './modules/lingui/lingui'
+import { linguiServer, localeCookie } from './modules/lingui/lingui.server'
+import styles from './styles.css?url'
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
-export default function App() {
+export async function action({ request }: ActionFunctionArgs) {
+	const formData = await request.formData()
+
+	const locale = formData.get('locale') ?? 'en'
+
+	return json(null, {
+		headers: {
+			'Set-Cookie': await localeCookie.serialize(locale),
+		},
+	})
+}
+
+export async function loader({ request }: LoaderFunctionArgs) {
+	const locale = await linguiServer.getLocale(request)
+
+	return json(
+		{
+			locale,
+		},
+		{
+			headers: {
+				'Set-Cookie': await localeCookie.serialize(locale),
+			},
+		},
+	)
+}
+
+export type RootLoaderType = typeof loader
+
+export function Layout({ children }: { children: React.ReactNode }) {
+	const locale = useLocale()
+
+	useEffect(() => {
+		if (i18n.locale !== locale) {
+			loadCatalog(locale)
+		}
+	}, [locale])
+
 	return (
-		<html lang="en">
+		<html lang={locale ?? 'en'}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,11 +66,14 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<Outlet />
+				{children}
 				<ScrollRestoration />
 				<Scripts />
-				<LiveReload />
 			</body>
 		</html>
 	)
+}
+
+export default function App() {
+	return <Outlet />
 }

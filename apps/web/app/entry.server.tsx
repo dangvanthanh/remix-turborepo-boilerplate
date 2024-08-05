@@ -6,11 +6,15 @@
 
 import { PassThrough } from 'node:stream'
 
+import { i18n } from '@lingui/core'
+import { I18nProvider } from '@lingui/react'
 import type { AppLoadContext, EntryContext } from '@remix-run/node'
 import { createReadableStreamFromReadable } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
+import { loadCatalog } from './modules/lingui/lingui'
+import { linguiServer } from './modules/lingui/lingui.server'
 
 const ABORT_DELAY = 5_000
 
@@ -87,20 +91,25 @@ function handleBotRequest(
 	})
 }
 
-function handleBrowserRequest(
+async function handleBrowserRequest(
 	request: Request,
 	responseStatusCode: number,
 	responseHeaders: Headers,
 	remixContext: EntryContext,
 ) {
+	const locale = await linguiServer.getLocale(request)
+	await loadCatalog(locale)
+
 	return new Promise((resolve, reject) => {
 		let shellRendered = false
 		const { pipe, abort } = renderToPipeableStream(
-			<RemixServer
-				context={remixContext}
-				url={request.url}
-				abortDelay={ABORT_DELAY}
-			/>,
+			<I18nProvider i18n={i18n}>
+				<RemixServer
+					context={remixContext}
+					url={request.url}
+					abortDelay={ABORT_DELAY}
+				/>
+			</I18nProvider>,
 			{
 				onShellReady() {
 					shellRendered = true

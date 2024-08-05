@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro'
 import { NavLink } from '@remix-run/react'
 import { cn } from '~/lib/utils'
 
@@ -6,10 +7,10 @@ export function MainNav({
 	...props
 }: React.HTMLAttributes<HTMLElement>) {
 	const navs = [
-		{ url: '/', name: 'Overview', active: true },
-		{ url: '/', name: 'Customers', active: false },
-		{ url: '/', name: 'Products', active: false },
-		{ url: '/', name: 'Settings', active: false },
+		{ url: '/', name: t`Overview`, active: true },
+		{ url: '/', name: t`Customers`, active: false },
+		{ url: '/', name: t`Products`, active: false },
+		{ url: '/', name: t`Settings`, active: false },
 	]
 
 	return (
