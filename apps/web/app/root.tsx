@@ -1,6 +1,5 @@
 import { i18n } from '@lingui/core'
 import {
-	type ActionFunctionArgs,
 	type LinksFunction,
 	type LoaderFunctionArgs,
 	json,
@@ -19,18 +18,6 @@ import styles from './styles.css?url'
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
-export async function action({ request }: ActionFunctionArgs) {
-	const formData = await request.formData()
-
-	const locale = formData.get('locale') ?? 'en'
-
-	return json(null, {
-		headers: {
-			'Set-Cookie': await localeCookie.serialize(locale),
-		},
-	})
-}
-
 export async function loader({ request }: LoaderFunctionArgs) {
 	const locale = await linguiServer.getLocale(request)
 
@@ -45,8 +32,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 		},
 	)
 }
-
-export type RootLoaderType = typeof loader
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const locale = useLocale()

@@ -1,6 +1,6 @@
+import type { Cookie, SessionStorage } from '@remix-run/node'
 import { pick } from 'accept-language-parser'
 import { getClientLocales } from './utils'
-import type { Cookie, SessionStorage } from '@remix-run/node'
 
 export interface LanguageDetectorOption {
 	/**

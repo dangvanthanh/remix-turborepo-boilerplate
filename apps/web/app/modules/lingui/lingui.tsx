@@ -1,13 +1,7 @@
 import { type MessageDescriptor, i18n } from '@lingui/core'
 import { msg } from '@lingui/macro'
 import { Trans } from '@lingui/react'
-import {
-	Link,
-	useFetcher,
-	useFetchers,
-	useMatches,
-	useRouteLoaderData,
-} from '@remix-run/react'
+import { Link, useMatches } from '@remix-run/react'
 import { useEffect } from 'react'
 import {
 	DropdownMenu,
@@ -15,7 +9,6 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from '~/components/ui/dropdown-menu'
-import type { RootLoaderType, action } from '~/root'
 import type config from './config'
 
 export function getLanguages(): Array<{
@@ -53,22 +46,8 @@ export function useLocale(localeKey = 'locale'): string {
 	throw new Error('Invalid locale returned by the root loader.')
 }
 
-export function useOptimisticLocale() {
-	const fetchers = useFetchers()
-	const themeFetcher = fetchers.find((f) => f.formAction === '/')
-
-	if (themeFetcher?.formData) {
-		const submission = Object.fromEntries(themeFetcher.formData)
-
-		// Use Valibot or zod to validate
-		if (
-			submission.status === 'success' &&
-			typeof submission.value === 'object' &&
-			'locale' in submission.value
-		) {
-			return submission.value.locale as string
-		}
-	}
+function getIconFlag(name: string) {
+	return `https://hatscripts.github.io/circle-flags/flags/${name}.svg`
 }
 
 export function LocaleSelector() {
@@ -77,15 +56,15 @@ export function LocaleSelector() {
 	const icons = [
 		{
 			key: 'en',
-			icon: 'https://hatscripts.github.io/circle-flags/flags/us.svg',
+			icon: getIconFlag('us'),
 		},
 		{
 			key: 'vi',
-			icon: 'https://hatscripts.github.io/circle-flags/flags/vn.svg',
+			icon: getIconFlag('vn'),
 		},
 		{
 			key: 'fr',
-			icon: 'https://hatscripts.github.io/circle-flags/flags/fr.svg',
+			icon: getIconFlag('fr'),
 		},
 	]
 
@@ -98,13 +77,16 @@ export function LocaleSelector() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<div className="flex justify-center items-center bg-gray-200 h-8 w-8 rounded-full overflow-hidden">
+				<button
+					type="button"
+					className="flex justify-center items-center bg-gray-200 h-8 w-8 rounded-full overflow-hidden"
+				>
 					<img
 						src={icons.find((icon) => icon.key === locale)?.icon}
 						alt=""
 						className="h-6 w-6 object-cover"
 					/>
-				</div>
+				</button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56" align="end" forceMount>
 				{languages.map((language) => (
@@ -124,29 +106,4 @@ export function LocaleSelector() {
 			</DropdownMenuContent>
 		</DropdownMenu>
 	)
-}
-
-export function useLocaleSelector() {
-	const data = useRouteLoaderData<RootLoaderType>('root')
-	const fetcher = useFetcher<typeof action>()
-
-	const optimisticLocale = useOptimisticLocale()
-	const locale = optimisticLocale ?? data?.locale ?? 'en'
-
-	const setLocale = (locale: string) => {
-		fetcher.submit(
-			{
-				locale,
-			},
-			{
-				method: 'POST',
-				action: '/',
-			},
-		)
-	}
-
-	return {
-		locale,
-		setLocale,
-	}
 }
