@@ -59,10 +59,6 @@ msgstr "Notifications"
 msgid "Overview"
 msgstr "Aperçu"
 
-#: app/components/dashboard/team-switcher.tsx:49
-msgid "Personal Account"
-msgstr "Compte Personnel"
-
 #: app/components/dashboard/main-nav.tsx:12
 msgid "Products"
 msgstr "Des Produits"
@@ -94,10 +90,6 @@ msgstr "Paramètres"
 #: app/routes/_index.tsx:52
 msgid "Subscriptions"
 msgstr "Abonnements"
-
-#: app/components/dashboard/team-switcher.tsx:58
-msgid "Teams"
-msgstr "Équipes"
 
 #: app/routes/_index.tsx:46
 msgid "Total Revenue"

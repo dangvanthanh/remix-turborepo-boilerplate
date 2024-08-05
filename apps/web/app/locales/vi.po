@@ -59,10 +59,6 @@ msgstr "Thông Báo"
 msgid "Overview"
 msgstr "Tổng Quan"
 
-#: app/components/dashboard/team-switcher.tsx:49
-msgid "Personal Account"
-msgstr "Tài Khoản Cá Nhân"
-
 #: app/components/dashboard/main-nav.tsx:12
 msgid "Products"
 msgstr "Sản Phẩm"
@@ -94,10 +90,6 @@ msgstr "Cài Đặt"
 #: app/routes/_index.tsx:52
 msgid "Subscriptions"
 msgstr "Đăng Ký"
-
-#: app/components/dashboard/team-switcher.tsx:58
-msgid "Teams"
-msgstr "nhóm"
 
 #: app/routes/_index.tsx:46
 msgid "Total Revenue"

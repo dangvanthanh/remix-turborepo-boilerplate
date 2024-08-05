@@ -59,10 +59,6 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: app/components/dashboard/team-switcher.tsx:49
-msgid "Personal Account"
-msgstr ""
-
 #: app/components/dashboard/main-nav.tsx:12
 msgid "Products"
 msgstr ""
@@ -93,10 +89,6 @@ msgstr ""
 
 #: app/routes/_index.tsx:52
 msgid "Subscriptions"
-msgstr ""
-
-#: app/components/dashboard/team-switcher.tsx:58
-msgid "Teams"
 msgstr ""
 
 #: app/routes/_index.tsx:46

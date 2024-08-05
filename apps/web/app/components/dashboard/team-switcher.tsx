@@ -46,7 +46,7 @@ import { cn } from '~/lib/utils'
 
 const groups = [
 	{
-		label: t`Personal Account`,
+		label: 'Personal Account',
 		teams: [
 			{
 				label: 'Alicia Koch',
@@ -55,7 +55,7 @@ const groups = [
 		],
 	},
 	{
-		label: t`Teams`,
+		label: 'Teams',
 		teams: [
 			{
 				label: 'Acme Inc.',
