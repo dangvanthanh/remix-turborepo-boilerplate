@@ -1,5 +1,14 @@
 import { Trans, t } from '@lingui/macro'
 import type { MetaFunction } from '@remix-run/node'
+import { Button } from '@repo/ui/button'
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@repo/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui/tabs'
 import {
 	Activity as ActivityIcon,
 	CreditCard as CreditCardIcon,
@@ -15,15 +24,6 @@ import {
 	TeamSwitcher,
 	UserNav,
 } from '~/components/dashboard'
-import { Button } from '~/components/ui/button'
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from '~/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '~/components/ui/tabs'
 import { LocaleSelector } from '~/modules/lingui/lingui'
 
 export const meta: MetaFunction = () => {

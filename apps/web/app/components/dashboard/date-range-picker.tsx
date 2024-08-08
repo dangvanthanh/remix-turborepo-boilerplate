@@ -5,14 +5,10 @@ import { addDays, format } from 'date-fns'
 import * as React from 'react'
 import type { DateRange } from 'react-day-picker'
 
-import { Button } from '~/components/ui/button'
-import { Calendar } from '~/components/ui/calendar'
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from '~/components/ui/popover'
-import { cn } from '~/lib/utils'
+import { Button } from '@repo/ui/button'
+import { Calendar } from '@repo/ui/calendar'
+import { cn } from '@repo/ui/cn'
+import { Popover, PopoverContent, PopoverTrigger } from '@repo/ui/popover'
 
 export function CalendarDateRangePicker({
 	className,

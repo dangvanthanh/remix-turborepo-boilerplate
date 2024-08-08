@@ -1,5 +1,5 @@
 import { t } from '@lingui/macro'
-import { Input } from '~/components/ui/input'
+import { Input } from '@repo/ui/input'
 
 export function Search() {
 	const placeholder = t`Search`
