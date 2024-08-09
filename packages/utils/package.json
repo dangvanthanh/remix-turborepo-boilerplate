@@ -10,10 +10,10 @@
 	"scripts": {
 		"dev": "tsup --watch",
 		"build": "tsup",
-		"lint": "pnpm dlx @biomejs/biome lint ./src",
-		"format": "pnpm dlx @biomejs/biome format ./src --write",
+		"lint": "biome lint ./src",
+		"format": "biome format ./src --write",
 		"check-types": "tsc --noEmit",
-		"update": "pnpm dlx npm-check-updates -ui"
+		"update": "bunx npm-check-updates -ui"
 	},
 	"license": "MIT",
 	"publishConfig": {

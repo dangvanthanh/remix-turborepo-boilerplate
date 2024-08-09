@@ -5,16 +5,16 @@
 	"version": "0.0.0",
 	"type": "module",
 	"files": [
-		"tailwind.config.ts",
+		"tailwind.config.mts",
 		"postcss.config.cjs",
 		"global.css"
 	],
 	"scripts": {
 		"dev": "storybook dev -p 6006",
 		"build": "storybook build",
-		"lint": "pnpm dlx @biomejs/biome lint ./src",
-		"format": "pnpm dlx @biomejs/biome format ./src --write",
-		"update": "pnpm dlx npm-check-updates -ui"
+		"lint": "biome lint ./src",
+		"format": "biome format ./src --write",
+		"update": "bunx npm-check-updates -ui"
 	},
 	"exports": {
 		"./accordion": "./src/components/accordion.tsx",
@@ -67,7 +67,7 @@
 		"./cn": "./src/utils/cn.ts",
 		"./postcss": "./postcss.config.cjs",
 		"./global.css": "./src/global.css",
-		"./tailwind.config": "./tailwind.config.ts"
+		"./tailwind.config": "./tailwind.config.mts"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",

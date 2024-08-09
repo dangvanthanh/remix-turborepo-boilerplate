@@ -6,11 +6,11 @@
 	"scripts": {
 		"build": "remix vite:build",
 		"dev": "remix vite:dev",
-		"lint": "pnpm dlx @biomejs/biome lint ./app",
-		"format": "pnpm dlx @biomejs/biome format ./app --write",
+		"lint": "biome lint ./app",
+		"format": "biome format ./app --write",
 		"start": "remix-serve ./build/index.js",
 		"typecheck": "tsc",
-		"update": "pnpm dlx npm-check-updates -ui",
+		"update": "bunx npm-check-updates -ui",
 		"lingui:extract": "lingui extract --clean"
 	},
 	"dependencies": {
