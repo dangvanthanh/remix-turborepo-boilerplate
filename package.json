@@ -13,7 +13,7 @@
 		"@repo/typescript-config": "workspace:*",
 		"husky": "^9.1.4",
 		"lint-staged": "^15.2.9",
-		"turbo": "^2.0.14"
+		"turbo": "^2.1.0"
 	},
 	"packageManager": "bun@1.1.25",
 	"engines": {
