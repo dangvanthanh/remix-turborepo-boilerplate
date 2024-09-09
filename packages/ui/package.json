@@ -101,7 +101,7 @@
 		"date-fns": "^3.6.0",
 		"embla-carousel-react": "^8.2.1",
 		"input-otp": "^1.2.4",
-		"lucide-react": "^0.438.0",
+		"lucide-react": "^0.439.0",
 		"next-themes": "^0.3.0",
 		"react": "^18.3.1",
 		"react-day-picker": "^8.10.0",
@@ -116,7 +116,7 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
-		"@chromatic-com/storybook": "^1.8.0",
+		"@chromatic-com/storybook": "^1.9.0",
 		"@repo/biome-config": "workspace:*",
 		"@repo/typescript-config": "workspace:*",
 		"@storybook/addon-essentials": "^8.2.9",
