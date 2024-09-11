@@ -1,4 +1,4 @@
-export const getDateTimeLocal = (timestamp?: Date): string => {
+export function getDateTimeLocal(timestamp?: Date): string {
 	const d = timestamp ? new Date(timestamp) : new Date()
 	if (d.toString() === 'Invalid Date') return ''
 	return new Date(d.getTime() - d.getTimezoneOffset() * 60000)
@@ -8,7 +8,7 @@ export const getDateTimeLocal = (timestamp?: Date): string => {
 		.join(':')
 }
 
-export const formatDate = (dateString: string) => {
+export function formatDate(dateString: string) {
 	return new Date(dateString).toLocaleDateString('en-US', {
 		day: 'numeric',
 		month: 'long',
@@ -17,7 +17,7 @@ export const formatDate = (dateString: string) => {
 	})
 }
 
-export const getFirstAndLastDay = (day: number) => {
+export function getFirstAndLastDay(day: number) {
 	const today = new Date()
 	const currentDay = today.getDate()
 	const currentMonth = today.getMonth()
@@ -40,14 +40,14 @@ export const getFirstAndLastDay = (day: number) => {
 }
 
 // Function to get the last day of the current month
-export const getLastDayOfMonth = () => {
+export function getLastDayOfMonth() {
 	const today = new Date()
 	const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0) // This will give the last day of the current month
 	return lastDay.getDate()
 }
 
 // Adjust the billingCycleStart based on the number of days in the current month
-export const getAdjustedBillingCycleStart = (billingCycleStart: number) => {
+export function getAdjustedBillingCycleStart(billingCycleStart: number) {
 	const lastDay = getLastDayOfMonth()
 
 	if (billingCycleStart > lastDay) {
@@ -57,7 +57,7 @@ export const getAdjustedBillingCycleStart = (billingCycleStart: number) => {
 	return billingCycleStart
 }
 
-export const getBillingStartDate = (billingCycleStart: number) => {
+export function getBillingStartDate(billingCycleStart: number) {
 	const today = new Date()
 	const currentDay = today.getDate()
 	const currentMonth = today.getMonth()

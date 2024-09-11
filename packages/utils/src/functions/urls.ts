@@ -1,4 +1,4 @@
-export const isValidUrl = (url: string) => {
+export function isValidUrl(url: string) {
 	try {
 		new URL(url)
 		return true
@@ -7,7 +7,7 @@ export const isValidUrl = (url: string) => {
 	}
 }
 
-export const getUrlFromString = (str: string) => {
+export function getUrlFromString(str: string) {
 	if (isValidUrl(str)) return str
 	try {
 		if (str.includes('.') && !str.includes(' ')) {
@@ -18,7 +18,7 @@ export const getUrlFromString = (str: string) => {
 	}
 }
 
-export const getSearchParams = (url: string) => {
+export function getSearchParams(url: string) {
 	// Create a params object
 	const params = {} as Record<string, string>
 
@@ -29,7 +29,7 @@ export const getSearchParams = (url: string) => {
 	return params
 }
 
-export const getParamsFromURL = (url: string) => {
+export function getParamsFromURL(url: string) {
 	if (!url) return {}
 	try {
 		const params = new URL(url).searchParams
@@ -45,10 +45,10 @@ export const getParamsFromURL = (url: string) => {
 	}
 }
 
-export const constructURLFromUTMParams = (
+export function constructURLFromUTMParams(
 	url: string,
 	utmParams: Record<string, string>,
-) => {
+) {
 	if (!url) return ''
 	try {
 		const newURL = new URL(url)
@@ -65,7 +65,7 @@ export const constructURLFromUTMParams = (
 	}
 }
 
-export const paramsMetadata = [
+const paramsMetadata = [
 	{ display: 'Referral (ref)', key: 'ref', examples: 'twitter, facebook' },
 	{ display: 'UTM Source', key: 'utm_source', examples: 'twitter, facebook' },
 	{ display: 'UTM Medium', key: 'utm_medium', examples: 'social, email' },
@@ -74,7 +74,7 @@ export const paramsMetadata = [
 	{ display: 'UTM Content', key: 'utm_content', examples: 'logolink' },
 ]
 
-export const getUrlWithoutUTMParams = (url: string) => {
+export function getUrlWithoutUTMParams(url: string) {
 	try {
 		const newURL = new URL(url)
 		paramsMetadata.forEach((param, _) => newURL.searchParams.delete(param.key))

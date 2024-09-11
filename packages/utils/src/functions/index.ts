@@ -1,6 +1,7 @@
 export * from './capitalize'
 export * from './datetime'
 export * from './deep-equal'
+export * from './price'
 export * from './time-ago'
 export * from './trim'
 export * from './truncate'

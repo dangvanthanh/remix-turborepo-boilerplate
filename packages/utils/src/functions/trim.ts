@@ -1,1 +1,4 @@
-export const trim = (u: unknown) => (typeof u === 'string' ? u.trim() : u)
+export function trim(u: unknown) {
+	return typeof u === 'string' ? u.trim() : u
+}
+

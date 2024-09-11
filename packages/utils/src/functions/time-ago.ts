@@ -1,13 +1,13 @@
 import ms from 'ms'
 
-export const timeAgo = (
+export function timeAgo(
 	timestamp: Date | null,
 	{
 		withAgo,
 	}: {
 		withAgo?: boolean
 	} = {},
-): string => {
+): string {
 	if (!timestamp) return 'Never'
 	const diff = Date.now() - new Date(timestamp).getTime()
 

@@ -20,5 +20,6 @@ export default function useLocalStorage<T>(
 		// Save to localStorage
 		window.localStorage.setItem(key, JSON.stringify(value))
 	}
+
 	return [storedValue, setValue]
 }

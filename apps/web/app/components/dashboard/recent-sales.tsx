@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/avatar'
-import { priceFormatter } from '~/lib/utils'
+import { formatterDolar } from '@repo/utils'
 
 export function RecentSales() {
 	const recentSales = [
@@ -53,7 +53,7 @@ export function RecentSales() {
 						<p className="text-sm text-muted-foreground">{sale.email}</p>
 					</div>
 					<div className="ml-auto font-medium">
-						{priceFormatter(sale.sales)}
+						{formatterDolar(sale.sales)}
 					</div>
 				</div>
 			))}
