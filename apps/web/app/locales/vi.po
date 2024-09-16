@@ -21,7 +21,7 @@ msgstr "Hoạt Động Gần Đây"
 msgid "Analytics"
 msgstr "Phân Tích"
 
-#: app/components/dashboard/team-switcher.tsx:159
+#: app/components/dashboard/team-switcher.tsx:155
 msgid "Create Team"
 msgstr "Tạo Nhóm"
 
@@ -37,15 +37,15 @@ msgstr "Trang Chủ"
 msgid "Download"
 msgstr "Tải Về"
 
-#: app/modules/lingui/lingui.tsx:26
+#: app/modules/lingui/lingui.tsx:19
 msgid "English"
 msgstr "English"
 
-#: app/modules/lingui/lingui.tsx:28
+#: app/modules/lingui/lingui.tsx:21
 msgid "French"
 msgstr "French"
 
-#: app/components/dashboard/team-switcher.tsx:113
+#: app/components/dashboard/team-switcher.tsx:109
 msgid "No team found."
 msgstr "Không tìm thấy nhóm nào."
 
@@ -79,7 +79,7 @@ msgstr "Doanh Số"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: app/components/dashboard/team-switcher.tsx:111
+#: app/components/dashboard/team-switcher.tsx:107
 msgid "Search team"
 msgstr "Tìm kiếm nhóm"
 
@@ -95,6 +95,6 @@ msgstr "Đăng Ký"
 msgid "Total Revenue"
 msgstr "Doanh Thu"
 
-#: app/modules/lingui/lingui.tsx:27
+#: app/modules/lingui/lingui.tsx:20
 msgid "Vietnamese"
 msgstr "Vietnamese"

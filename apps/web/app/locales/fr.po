@@ -21,7 +21,7 @@ msgstr "Actif Maintenant"
 msgid "Analytics"
 msgstr "Analytique"
 
-#: app/components/dashboard/team-switcher.tsx:159
+#: app/components/dashboard/team-switcher.tsx:155
 msgid "Create Team"
 msgstr "Créer Une Équipe"
 
@@ -37,15 +37,15 @@ msgstr "Tableau De Bord"
 msgid "Download"
 msgstr "Télécharger"
 
-#: app/modules/lingui/lingui.tsx:26
+#: app/modules/lingui/lingui.tsx:19
 msgid "English"
 msgstr "English"
 
-#: app/modules/lingui/lingui.tsx:28
+#: app/modules/lingui/lingui.tsx:21
 msgid "French"
 msgstr "French"
 
-#: app/components/dashboard/team-switcher.tsx:113
+#: app/components/dashboard/team-switcher.tsx:109
 msgid "No team found."
 msgstr "Aucune équipe trouvée."
 
@@ -79,7 +79,7 @@ msgstr "Ventes"
 msgid "Search"
 msgstr "Recherche"
 
-#: app/components/dashboard/team-switcher.tsx:111
+#: app/components/dashboard/team-switcher.tsx:107
 msgid "Search team"
 msgstr "Équipe de recherche"
 
@@ -95,6 +95,6 @@ msgstr "Abonnements"
 msgid "Total Revenue"
 msgstr "Revenu Total"
 
-#: app/modules/lingui/lingui.tsx:27
+#: app/modules/lingui/lingui.tsx:20
 msgid "Vietnamese"
 msgstr "Vietnamese"
