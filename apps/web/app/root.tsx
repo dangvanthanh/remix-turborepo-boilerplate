@@ -2,7 +2,7 @@ import { i18n } from '@lingui/core'
 import {
 	type LinksFunction,
 	type LoaderFunctionArgs,
-	json,
+	data,
 } from '@remix-run/node'
 import {
 	Links,
@@ -21,7 +21,7 @@ export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 export async function loader({ request }: LoaderFunctionArgs) {
 	const locale = await linguiServer.getLocale(request)
 
-	return json(
+	return data(
 		{
 			locale,
 		},

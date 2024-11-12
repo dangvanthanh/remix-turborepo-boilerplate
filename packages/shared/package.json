@@ -1,5 +1,5 @@
 {
-	"name": "@repo/utils",
+	"name": "@repo/shared",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
@@ -25,9 +25,9 @@
 		"@repo/biome-config": "workspace:*",
 		"@repo/typescript-config": "workspace:*",
 		"@types/js-cookie": "^3.0.6",
-		"@types/react": "^18.3.11",
+		"@types/react": "^18.3.12",
 		"react": "^18.3.1",
-		"tsup": "^8.3.0",
+		"tsup": "^8.3.5",
 		"typescript": "^5.6.3"
 	},
 	"dependencies": {

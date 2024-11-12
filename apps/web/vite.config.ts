@@ -4,6 +4,30 @@ import { defineConfig } from 'vite'
 import macrosPlugin from 'vite-plugin-babel-macros'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
+declare module '@remix-run/node' {
+	// or cloudflare, deno, etc.
+	interface Future {
+		v3_fetcherPersist: true
+		v3_lazyRouteDiscovery: true
+		v3_relativeSplatPath: true
+		v3_singleFetch: true
+		v3_throwAbortReason: true
+	}
+}
+
 export default defineConfig({
-	plugins: [remix(), macrosPlugin(), lingui(), tsconfigPaths()],
+	plugins: [
+		remix({
+			future: {
+				v3_fetcherPersist: true,
+				v3_lazyRouteDiscovery: true,
+				v3_relativeSplatPath: true,
+				v3_singleFetch: true,
+				v3_throwAbortReason: true,
+			},
+		}),
+		macrosPlugin(),
+		lingui(),
+		tsconfigPaths(),
+	],
 })
