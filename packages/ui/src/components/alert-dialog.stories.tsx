@@ -10,11 +10,14 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from './alert-dialog'
+import { Button } from './button'
 
 const meta: Meta<typeof AlertDialog> = {
 	component: () => (
 		<AlertDialog>
-			<AlertDialogTrigger>Open</AlertDialogTrigger>
+			<AlertDialogTrigger asChild>
+				<Button variant="outline">Open</Button>
+			</AlertDialogTrigger>
 			<AlertDialogContent>
 				<AlertDialogHeader>
 					<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

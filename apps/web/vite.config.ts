@@ -5,7 +5,6 @@ import macrosPlugin from 'vite-plugin-babel-macros'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 declare module '@remix-run/node' {
-	// or cloudflare, deno, etc.
 	interface Future {
 		v3_fetcherPersist: true
 		v3_lazyRouteDiscovery: true

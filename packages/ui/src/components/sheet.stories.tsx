@@ -8,11 +8,14 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from './sheet'
+import { Button } from './button'
 
 const meta: Meta<typeof Sheet> = {
 	component: () => (
 		<Sheet>
-			<SheetTrigger>Open</SheetTrigger>
+			<SheetTrigger asChild>
+				<Button variant="outline">Open</Button>
+			</SheetTrigger>
 			<SheetContent>
 				<SheetHeader>
 					<SheetTitle>Are you absolutely sure?</SheetTitle>
