@@ -16,7 +16,6 @@ import { ServerRouter } from 'react-router'
 import { loadCatalog } from './modules/lingui/lingui'
 import { linguiServer } from './modules/lingui/lingui.server'
 
-// Reject/cancel all pending promises after 5 seconds
 export const streamTimeout = 5000
 
 export default function handleRequest(
@@ -84,8 +83,6 @@ function handleBotRequest(
 			},
 		)
 
-		// Automatically timeout the React renderer after 6 seconds, which ensures
-		// React has enough time to flush down the rejected boundary contents
 		setTimeout(abort, streamTimeout + 1000)
 	})
 }
@@ -136,8 +133,6 @@ async function handleBrowserRequest(
 			},
 		)
 
-		// Automatically timeout the React renderer after 6 seconds, which ensures
-		// React has enough time to flush down the rejected boundary contents
 		setTimeout(abort, streamTimeout + 1000)
 	})
 }
