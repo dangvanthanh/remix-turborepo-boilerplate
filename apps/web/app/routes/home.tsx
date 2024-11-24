@@ -1,4 +1,3 @@
-import { Trans, t } from '@lingui/macro'
 import { Button } from '@repo/ui/button'
 import {
 	Card,
@@ -14,7 +13,6 @@ import {
 	DollarSign as DollarSignIcon,
 	Users as UsersIcon,
 } from 'lucide-react'
-import type { MetaFunction } from 'react-router'
 import {
 	CalendarDateRangePicker,
 	MainNav,
@@ -26,42 +24,42 @@ import {
 } from '~/components/dashboard'
 import { LocaleSelector } from '~/modules/lingui/lingui'
 
-export const meta: MetaFunction = () => {
+export function meta() {
 	return [
 		{ title: 'Remix, Turborepo, and Vite' },
 		{ name: 'description', content: 'Welcome to Remix, Turborepo, and Vite!' },
 	]
 }
 
-export default function Index() {
+export default function Home() {
 	const tabs = [
-		{ name: t`Overview`, value: 'overview', disabled: false },
-		{ name: t`Analytics`, value: 'analytics', disabled: true },
-		{ name: t`Reports`, value: 'reports', disabled: true },
-		{ name: t`Notifications`, value: 'notifications', disabled: true },
+		{ name: 'Overview', value: 'overview', disabled: false },
+		{ name: 'Analytics', value: 'analytics', disabled: true },
+		{ name: 'Reports', value: 'reports', disabled: true },
+		{ name: 'Notifications', value: 'notifications', disabled: true },
 	]
 
 	const cards = [
 		{
-			title: t`Total Revenue`,
+			title: 'Total Revenue',
 			icon: <DollarSignIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '$45,231.89',
 			description: '+20.1% from last month',
 		},
 		{
-			title: t`Subscriptions`,
+			title: 'Subscriptions',
 			icon: <UsersIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+2350',
 			description: '+180.1% from last month',
 		},
 		{
-			title: t`Sales`,
+			title: 'Sales',
 			icon: <CreditCardIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+12,234',
 			description: '+19% from last month',
 		},
 		{
-			title: t`Active Now`,
+			title: 'Active Now',
 			icon: <ActivityIcon className="h-4 w-4 text-muted-foreground" />,
 			statistics: '+573',
 			description: '+201 since last hour',
@@ -83,14 +81,10 @@ export default function Index() {
 			</div>
 			<div className="flex-1 space-y-4 p-8 pt-6">
 				<div className="flex items-center justify-between space-y-2">
-					<h2 className="text-3xl font-bold tracking-tight">
-						<Trans>Dashboard</Trans>
-					</h2>
+					<h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
 					<div className="flex items-center space-x-2">
 						<CalendarDateRangePicker />
-						<Button>
-							<Trans>Download</Trans>
-						</Button>
+						<Button>Download</Button>
 					</div>
 				</div>
 				<Tabs defaultValue="overview" className="space-y-4">
@@ -127,9 +121,7 @@ export default function Index() {
 						<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
 							<Card className="col-span-4">
 								<CardHeader>
-									<CardTitle>
-										<Trans>Overview</Trans>
-									</CardTitle>
+									<CardTitle>Overview</CardTitle>
 								</CardHeader>
 								<CardContent className="pl-2">
 									<Overview />
@@ -137,9 +129,7 @@ export default function Index() {
 							</Card>
 							<Card className="col-span-3">
 								<CardHeader>
-									<CardTitle>
-										<Trans>Recent Sales</Trans>
-									</CardTitle>
+									<CardTitle>Recent Sales</CardTitle>
 									<CardDescription>
 										You made 265 sales this month.
 									</CardDescription>

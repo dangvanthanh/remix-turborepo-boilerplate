@@ -1,22 +1,18 @@
 {
 	"include": [
-		"**/*.ts",
-		"**/*.tsx",
-		"**/.server/**/*.ts",
-		"**/.server/**/*.tsx",
-		"**/.client/**/*.ts",
-		"**/.client/**/*.tsx",
-		".react-router/types/**/*",
-		"tailwind.config.ts"
+		"**/*",
+		"**/.server/**/*",
+		"**/.client/**/*",
+		".react-router/types/**/*"
 	],
 	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"types": ["@react-router/node", "vite/client"],
+		"types": ["node", "vite/client"],
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"jsx": "react-jsx",
-		"module": "ESNext",
+		"module": "ES2022",
 		"moduleResolution": "Bundler",
 		"resolveJsonModule": true,
 		"target": "ES2022",
@@ -24,13 +20,11 @@
 		"allowJs": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"rootDirs": [".", "./.react-router/types"],
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["./app/*"]
 		},
-
-		// Vite takes care of building everything, not tsc.
-		"noEmit": true
+		"noEmit": true,
+		"rootDirs": [".", "./.react-router/types"]
 	}
 }
