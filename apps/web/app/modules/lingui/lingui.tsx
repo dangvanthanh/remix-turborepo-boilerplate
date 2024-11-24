@@ -8,7 +8,7 @@ import {
 	DropdownMenuTrigger,
 } from '@repo/ui/dropdown-menu'
 import { useEffect } from 'react'
-import { Link, useMatches } from 'react-router';
+import { Link, useMatches } from 'react-router'
 import type config from './config'
 
 export function getLanguages(): Array<{

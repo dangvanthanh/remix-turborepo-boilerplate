@@ -9,7 +9,7 @@ import { detect, fromHtmlTag } from '@lingui/detect-locale'
 import { I18nProvider } from '@lingui/react'
 import { StrictMode, startTransition } from 'react'
 import { hydrateRoot } from 'react-dom/client'
-import { HydratedRouter } from 'react-router/dom';
+import { HydratedRouter } from 'react-router/dom'
 import { loadCatalog } from './modules/lingui/lingui'
 
 async function main() {

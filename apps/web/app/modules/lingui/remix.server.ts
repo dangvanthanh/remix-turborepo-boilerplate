@@ -1,4 +1,4 @@
-import type { Cookie, SessionStorage } from 'react-router';
+import type { Cookie, SessionStorage } from 'react-router'
 import { pick } from 'accept-language-parser'
 import { getClientLocales } from './utils'
 

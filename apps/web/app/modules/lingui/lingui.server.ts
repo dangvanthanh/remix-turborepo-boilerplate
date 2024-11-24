@@ -1,4 +1,4 @@
-import { createCookie } from 'react-router';
+import { createCookie } from 'react-router'
 import config from './config'
 import { RemixLingui } from './remix.server'
 

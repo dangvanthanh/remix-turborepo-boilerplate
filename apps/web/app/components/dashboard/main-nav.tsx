@@ -1,5 +1,5 @@
 import { t } from '@lingui/macro'
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router'
 import { cn } from '@repo/ui/cn'
 
 export function MainNav({
