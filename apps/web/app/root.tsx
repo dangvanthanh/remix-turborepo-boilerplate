@@ -1,17 +1,7 @@
 import { i18n } from '@lingui/core'
-import {
-	type LinksFunction,
-	type LoaderFunctionArgs,
-	data,
-} from '@remix-run/node'
-import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-} from '@remix-run/react'
 import { useEffect } from 'react'
+import { type LinksFunction, type LoaderFunctionArgs, data } from 'react-router'
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
 import { loadCatalog, useLocale } from './modules/lingui/lingui'
 import { linguiServer, localeCookie } from './modules/lingui/lingui.server'
 import styles from './styles.css?url'

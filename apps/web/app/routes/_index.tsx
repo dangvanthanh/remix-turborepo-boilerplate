@@ -1,5 +1,4 @@
 import { Trans, t } from '@lingui/macro'
-import type { MetaFunction } from '@remix-run/node'
 import { Button } from '@repo/ui/button'
 import {
 	Card,
@@ -15,6 +14,7 @@ import {
 	DollarSign as DollarSignIcon,
 	Users as UsersIcon,
 } from 'lucide-react'
+import type { MetaFunction } from 'react-router'
 import {
 	CalendarDateRangePicker,
 	MainNav,

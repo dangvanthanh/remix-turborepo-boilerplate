@@ -1,7 +1,6 @@
 import { type MessageDescriptor, i18n } from '@lingui/core'
 import { msg } from '@lingui/macro'
 import { Trans } from '@lingui/react'
-import { Link, useMatches } from '@remix-run/react'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -9,6 +8,7 @@ import {
 	DropdownMenuTrigger,
 } from '@repo/ui/dropdown-menu'
 import { useEffect } from 'react'
+import { Link, useMatches } from 'react-router';
 import type config from './config'
 
 export function getLanguages(): Array<{

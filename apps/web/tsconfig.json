@@ -6,12 +6,13 @@
 		"**/.server/**/*.tsx",
 		"**/.client/**/*.ts",
 		"**/.client/**/*.tsx",
-		"tailwind.config.mts"
+		".react-router/types/**/*",
+		"tailwind.config.mt"
 	],
-  "exclude": ["node_modules"],
+	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"types": ["@remix-run/node", "vite/client"],
+		"types": ["@react-router/node", "vite/client"],
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"jsx": "react-jsx",
@@ -23,6 +24,7 @@
 		"allowJs": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
+		"rootDirs": [".", "./.react-router/types"],
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["./app/*"]

@@ -1,5 +1,5 @@
 import { t } from '@lingui/macro'
-import { NavLink } from '@remix-run/react'
+import { NavLink } from 'react-router';
 import { cn } from '@repo/ui/cn'
 
 export function MainNav({

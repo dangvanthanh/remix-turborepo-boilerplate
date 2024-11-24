@@ -1,4 +1,4 @@
-import type { Cookie, SessionStorage } from '@remix-run/node'
+import type { Cookie, SessionStorage } from 'react-router';
 import { pick } from 'accept-language-parser'
 import { getClientLocales } from './utils'
 
