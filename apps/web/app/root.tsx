@@ -1,29 +1,25 @@
 import { i18n } from '@lingui/core'
 import { useEffect } from 'react'
 import {
-	type LoaderFunctionArgs,
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
 	data,
 	isRouteErrorResponse,
 } from 'react-router'
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
+import type { Route } from './+types/root'
 import { loadCatalog, useLocale } from './modules/lingui/lingui'
 import { linguiServer, localeCookie } from './modules/lingui/lingui.server'
 import './styles.css'
-import type { Route } from './+types/root'
+import { Button } from '@repo/ui/button'
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
 	const locale = await linguiServer.getLocale(request)
+	const cookie = await localeCookie.serialize(locale)
 
-	return data(
-		{
-			locale,
-		},
-		{
-			headers: {
-				'Set-Cookie': await localeCookie.serialize(locale),
-			},
-		},
-	)
+	return data({ locale }, { headers: { 'Set-Cookie': cookie } })
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -59,7 +55,6 @@ export default function App() {
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 	let message = 'Oops!'
 	let details = 'An unexpected error occurred.'
-	let stack: string | undefined
 
 	if (isRouteErrorResponse(error)) {
 		message = error.status === 404 ? '404' : 'Error'
@@ -69,18 +64,21 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 				: error.statusText || details
 	} else if (import.meta.env.DEV && error && error instanceof Error) {
 		details = error.message
-		stack = error.stack
 	}
 
 	return (
-		<main className="pt-16 p-4 container mx-auto">
-			<h1>{message}</h1>
-			<p>{details}</p>
-			{stack && (
-				<pre className="w-full p-4 overflow-x-auto">
-					<code>{stack}</code>
-				</pre>
-			)}
+		<main className="flex items-center justify-center min-h-screen">
+			<div className="w-full space-y-6 text-center">
+				<div className="space-y-3">
+					<h1 className="text-6xl md:text-8xl tracking-tighter font-semibold">
+						{message}
+					</h1>
+					<p className="text-muted-foreground">{details}</p>
+				</div>
+				<Button asChild>
+					<a href="/">Back to home</a>
+				</Button>
+			</div>
 		</main>
 	)
 }

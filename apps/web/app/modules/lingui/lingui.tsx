@@ -38,12 +38,13 @@ export async function loadCatalog(locale: string) {
  * let formattedDate = date.toLocaleDateString(locale);
  */
 export function useLocale(localeKey = 'locale'): string {
+	const defaultLocale = 'en'
 	const [rootMatch] = useMatches()
 	const { [localeKey]: locale } =
 		(rootMatch.data as Record<string, string>) ?? {}
-	if (!locale) throw new Error('Missing locale returned by the root loader.')
+	if (!locale) return defaultLocale
 	if (typeof locale === 'string') return locale
-	throw new Error('Invalid locale returned by the root loader.')
+	return defaultLocale
 }
 
 function getIconFlag(name: string) {

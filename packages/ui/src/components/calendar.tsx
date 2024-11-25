@@ -2,7 +2,7 @@
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import type * as React from 'react'
-import { DayPicker } from 'react-day-picker'
+import { type DateRange, DayPicker } from 'react-day-picker'
 import { cn } from '../utils'
 import { buttonVariants } from './button'
 
@@ -68,4 +68,4 @@ function Calendar({
 
 Calendar.displayName = 'Calendar'
 
-export { Calendar }
+export { Calendar, type DateRange }
