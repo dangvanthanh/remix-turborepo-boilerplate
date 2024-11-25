@@ -1,5 +1,3 @@
-'use client'
-
 import { VisAxis, VisStackedBar, VisXYContainer } from '@unovis/react'
 
 interface DataRecord {

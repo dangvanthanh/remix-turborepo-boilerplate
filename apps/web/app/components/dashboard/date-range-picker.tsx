@@ -1,5 +1,3 @@
-'use client'
-
 import { CalendarIcon } from '@radix-ui/react-icons'
 import { Button } from '@repo/ui/button'
 import { Calendar, type DateRange } from '@repo/ui/calendar'

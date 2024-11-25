@@ -1,5 +1,3 @@
-'use client'
-
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
 import type * as React from 'react'
 import { type DateRange, DayPicker } from 'react-day-picker'

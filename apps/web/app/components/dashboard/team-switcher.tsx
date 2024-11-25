@@ -1,5 +1,3 @@
-'use client'
-
 import { Trans, t } from '@lingui/macro'
 import {
 	CaretSortIcon,
