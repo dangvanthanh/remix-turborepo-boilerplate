@@ -67,18 +67,29 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 	}
 
 	return (
-		<main className="flex items-center justify-center min-h-screen">
-			<div className="w-full space-y-6 text-center">
-				<div className="space-y-3">
-					<h1 className="text-6xl md:text-8xl tracking-tighter font-semibold">
-						{message}
-					</h1>
-					<p className="text-muted-foreground">{details}</p>
-				</div>
-				<Button asChild>
-					<a href="/">Back to home</a>
-				</Button>
-			</div>
-		</main>
+		<html lang="en">
+			<head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>404 - Page not found</title>
+				<Meta />
+				<Links />
+			</head>
+			<body>
+				<main className="flex items-center justify-center min-h-screen">
+					<div className="w-full space-y-6 text-center">
+						<div className="space-y-3">
+							<h1 className="text-6xl md:text-8xl tracking-tighter font-semibold">
+								{message}
+							</h1>
+							<p className="text-muted-foreground">{details}</p>
+						</div>
+						<Button asChild>
+							<a href="/">Back to home</a>
+						</Button>
+					</div>
+				</main>
+			</body>
+		</html>
 	)
 }
