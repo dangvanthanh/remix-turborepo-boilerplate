@@ -1,5 +1,6 @@
 import { i18n } from '@lingui/core'
-import { useEffect } from 'react'
+import { Button } from '@repo/ui/button'
+import { useEffect, useMemo } from 'react'
 import {
 	Links,
 	Meta,
@@ -12,8 +13,11 @@ import {
 import type { Route } from './+types/root'
 import { loadCatalog, useLocale } from './modules/lingui/lingui'
 import { linguiServer, localeCookie } from './modules/lingui/lingui.server'
-import './styles.css'
-import { Button } from '@repo/ui/button'
+import stylesheet from './styles.css?url'
+
+export const links: Route.LinksFunction = () => [
+	{ rel: 'stylesheet', href: stylesheet },
+]
 
 export async function loader({ request }: Route.LoaderArgs) {
 	const locale = await linguiServer.getLocale(request)
@@ -31,8 +35,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		}
 	}, [locale])
 
+	const lang = useMemo(() => locale ?? 'en', [locale])
+
 	return (
-		<html lang={locale ?? 'en'}>
+		<html lang={lang}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
