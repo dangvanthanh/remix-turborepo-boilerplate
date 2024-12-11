@@ -1,5 +1,5 @@
 import { type MessageDescriptor, i18n } from '@lingui/core'
-import { msg } from '@lingui/macro'
+import { msg } from '@lingui/core/macro'
 import { Trans } from '@lingui/react'
 import {
 	DropdownMenu,

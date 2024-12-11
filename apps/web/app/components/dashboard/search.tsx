@@ -1,7 +1,8 @@
-import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react/macro'
 import { Input } from '@repo/ui/input'
 
 export function Search() {
+	const { t } = useLingui()
 	const placeholder = t`Search`
 
 	return (

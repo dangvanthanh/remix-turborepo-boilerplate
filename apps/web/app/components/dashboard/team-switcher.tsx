@@ -1,4 +1,4 @@
-import { Trans, t } from '@lingui/macro'
+import { useLingui } from '@lingui/react/macro'
 import {
 	CaretSortIcon,
 	CheckIcon,
@@ -70,6 +70,7 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 interface TeamSwitcherProps extends PopoverTriggerProps {}
 
 export function TeamSwitcher({ className }: TeamSwitcherProps) {
+	const { t } = useLingui()
 	const [open, setOpen] = React.useState(false)
 	const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
 	const [selectedTeam, setSelectedTeam] = React.useState<Team>(
@@ -102,9 +103,7 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 					<Command>
 						<CommandList>
 							<CommandInput placeholder={`${t`Search team`}...`} />
-							<CommandEmpty>
-								<Trans>No team found.</Trans>
-							</CommandEmpty>
+							<CommandEmpty>{t`No team found.`}</CommandEmpty>
 							{groups.map((group) => (
 								<CommandGroup key={group.label} heading={group.label}>
 									{group.teams.map((team) => (
@@ -149,7 +148,7 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 										}}
 									>
 										<PlusCircledIcon className="mr-2 h-5 w-5" />
-										<Trans>Create Team</Trans>
+										{t`Create Team`}
 									</CommandItem>
 								</DialogTrigger>
 							</CommandGroup>

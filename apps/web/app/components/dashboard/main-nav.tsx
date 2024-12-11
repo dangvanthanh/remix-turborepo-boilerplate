@@ -1,11 +1,12 @@
-import { t } from '@lingui/macro'
-import { NavLink } from 'react-router'
+import { useLingui } from '@lingui/react/macro'
 import { cn } from '@repo/ui/cn'
+import { NavLink } from 'react-router'
 
 export function MainNav({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLElement>) {
+	const { t } = useLingui()
 	const navs = [
 		{ url: '/', name: t`Overview`, active: true },
 		{ url: '/', name: t`Customers`, active: false },
