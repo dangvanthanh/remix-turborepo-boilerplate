@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import { cn } from '../utils'
 
 const Card = React.forwardRef<
@@ -30,10 +29,10 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = 'CardHeader'
 
 const CardTitle = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLHeadingElement>
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<h3
+	<div
 		ref={ref}
 		className={cn(
 			'text-2xl font-semibold leading-none tracking-tight',
@@ -45,10 +44,10 @@ const CardTitle = React.forwardRef<
 CardTitle.displayName = 'CardTitle'
 
 const CardDescription = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement>
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<p
+	<div
 		ref={ref}
 		className={cn('text-sm text-muted-foreground', className)}
 		{...props}

@@ -6,6 +6,7 @@
 	"type": "module",
 	"files": ["tailwind.config.ts", "postcss.config.cjs", "global.css"],
 	"scripts": {
+		"shadcn:add": "bunx --bun shadcn@latest add",
 		"dev": "storybook dev -p 6006",
 		"build": "storybook build",
 		"lint": "biome lint ./src",
