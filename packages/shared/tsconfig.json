@@ -1,9 +1,9 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Bundler"
-  }
+	"extends": "@repo/typescript-config/react-library.json",
+	"include": ["."],
+	"exclude": ["dist", "build", "node_modules"],
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler"
+	}
 }
