@@ -6,15 +6,16 @@
 
 import { PassThrough } from 'node:stream'
 
-import { i18n } from '@lingui/core'
-import { I18nProvider } from '@lingui/react'
 import { createReadableStreamFromReadable } from '@react-router/node'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
 import type { AppLoadContext, EntryContext } from 'react-router'
 import { ServerRouter } from 'react-router'
-import { loadCatalog } from './modules/lingui/lingui'
-import { linguiServer } from './modules/lingui/lingui.server'
+
+import { i18n } from '@lingui/core'
+import { I18nProvider } from '@lingui/react'
+import { loadCatalog } from '@repo/i18n'
+import { linguiServer } from '@repo/i18n/lingui.server'
 
 export const streamTimeout = 5000
 

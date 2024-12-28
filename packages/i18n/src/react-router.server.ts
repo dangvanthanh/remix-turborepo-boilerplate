@@ -1,5 +1,5 @@
-import type { Cookie, SessionStorage } from 'react-router'
 import { pick } from 'accept-language-parser'
+import type { Cookie, SessionStorage } from 'react-router'
 import { getClientLocales } from './utils'
 
 export interface LanguageDetectorOption {
@@ -51,14 +51,14 @@ export interface LanguageDetectorOption {
 	order?: Array<'searchParams' | 'cookie' | 'session' | 'header'>
 }
 
-export interface RemixLinguiOptions {
+export interface ReactRouterLinguiOptions {
 	detection: LanguageDetectorOption
 }
 
-export class RemixLingui {
+export class ReactRouterLingui {
 	private detector: LanguageDetector
 
-	constructor(private options: RemixLinguiOptions) {
+	constructor(private options: ReactRouterLinguiOptions) {
 		this.detector = new LanguageDetector(this.options.detection)
 	}
 

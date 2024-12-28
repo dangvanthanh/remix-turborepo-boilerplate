@@ -1,4 +1,6 @@
 import { i18n } from '@lingui/core'
+import { loadCatalog, useLocale } from '@repo/i18n'
+import { linguiServer, localeCookie } from '@repo/i18n/lingui.server'
 import { Button } from '@repo/ui/button'
 import { useEffect, useMemo } from 'react'
 import {
@@ -11,8 +13,6 @@ import {
 	isRouteErrorResponse,
 } from 'react-router'
 import type { Route } from './+types/root'
-import { loadCatalog, useLocale } from './modules/lingui/lingui'
-import { linguiServer, localeCookie } from './modules/lingui/lingui.server'
 import stylesheet from './styles.css?url'
 
 export const links: Route.LinksFunction = () => [

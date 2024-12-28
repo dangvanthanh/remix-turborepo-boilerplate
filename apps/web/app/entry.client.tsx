@@ -7,10 +7,10 @@
 import { i18n } from '@lingui/core'
 import { detect, fromHtmlTag } from '@lingui/detect-locale'
 import { I18nProvider } from '@lingui/react'
+import { loadCatalog } from '@repo/i18n'
 import { StrictMode, startTransition } from 'react'
 import { hydrateRoot } from 'react-dom/client'
 import { HydratedRouter } from 'react-router/dom'
-import { loadCatalog } from './modules/lingui/lingui'
 
 async function main() {
 	const locale = detect(fromHtmlTag('lang')) || 'en'

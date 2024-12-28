@@ -6,6 +6,8 @@
 		"dev": "turbo dev",
 		"lint": "turbo lint",
 		"format": "turbo format",
+		"i18n:extract": "lingui extract --clean",
+		"i18n:compile": "lingui compile --typescript",
 		"prepare": "husky"
 	},
 	"devDependencies": {

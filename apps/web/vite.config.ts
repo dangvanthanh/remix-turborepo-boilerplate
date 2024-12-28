@@ -12,5 +12,12 @@ export default defineConfig({
 			plugins: [tailwindcss, autoprefixer],
 		},
 	},
-	plugins: [reactRouter(), macrosPlugin(), lingui(), tsconfigPaths()],
+	plugins: [
+		macrosPlugin(),
+		lingui({
+			configPath: '../../lingui.config.ts',
+		}),
+		reactRouter(),
+		tsconfigPaths(),
+	],
 })

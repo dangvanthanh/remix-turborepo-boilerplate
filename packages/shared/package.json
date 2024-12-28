@@ -11,8 +11,7 @@
 		"build": "tsup",
 		"lint": "biome lint ./src",
 		"format": "biome format ./src --write",
-		"check-types": "tsc --noEmit",
-		"update": "bunx npm-check-updates -ui"
+		"check-types": "tsc --noEmit"
 	},
 	"license": "MIT",
 	"publishConfig": {

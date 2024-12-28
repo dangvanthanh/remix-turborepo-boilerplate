@@ -22,7 +22,7 @@ import {
 	TeamSwitcher,
 	UserNav,
 } from '~/components/dashboard'
-import { LocaleSelector } from '~/modules/lingui/lingui'
+import { LocaleSelector } from '~/components/locale-selector'
 
 export function meta() {
 	return [

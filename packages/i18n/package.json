@@ -1,0 +1,33 @@
+{
+	"name": "@repo/i18n",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"lint": "biome lint ./src",
+		"format": "biome format ./src --write",
+		"extract": "lingui extract --clean"
+	},
+	"exports": {
+		"./lingui.server": "./src/lingui.server.ts",
+		"./react-router.server": "./src/react-router.server.ts",
+		"./utils": "./src/utils.ts",
+		".": "./src/index.ts"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@repo/biome-config": "workspace:*",
+		"@repo/typescript-config": "workspace:*",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"@lingui/core": "^5.1.2",
+		"@lingui/detect-locale": "^5.1.2",
+		"@lingui/react": "^5.1.2",
+		"accept-language-parser": "^1.5.0",
+		"intl-parse-accept-language": "^1.0.0"
+	}
+}

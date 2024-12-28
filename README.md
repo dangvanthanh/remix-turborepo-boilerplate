@@ -9,6 +9,7 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 ### Apps and Packages
 
 - `web` - Remix app with port is `3000`
+- `i18n` - Internationalization
 - `ui` - Ui components
 - `shared` - Utility functions and constants
 - `biome-config` - Biome config for the repo
