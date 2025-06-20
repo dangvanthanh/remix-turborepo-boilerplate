@@ -1,7 +1,7 @@
 type DeepEqual = (
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint: false positive
 	obj1: Record<string, any>,
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint: false positive
 	obj2: Record<string, any>,
 ) => boolean
 

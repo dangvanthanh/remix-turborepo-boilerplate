@@ -19,7 +19,7 @@ export function CalendarDateRangePicker({
 			<Popover>
 				<PopoverTrigger asChild>
 					<Button
-						id="date"
+						id={React.useId()}
 						variant={'outline'}
 						className={cn(
 							'w-[260px] justify-start text-left font-normal',

@@ -4,13 +4,15 @@
 	"sideEffects": false,
 	"version": "0.0.0",
 	"type": "module",
-	"files": ["tailwind.config.ts", "postcss.config.cjs", "global.css"],
+	"files": [
+		"tailwind.config.ts",
+		"postcss.config.cjs",
+		"global.css"
+	],
 	"scripts": {
 		"shadcn:add": "bunx --bun shadcn@latest add",
 		"dev": "storybook dev -p 6006",
-		"build": "storybook build",
-		"lint": "biome lint ./src",
-		"format": "biome format ./src --write"
+		"build": "storybook build"
 	},
 	"exports": {
 		"./accordion": "./src/components/accordion.tsx",

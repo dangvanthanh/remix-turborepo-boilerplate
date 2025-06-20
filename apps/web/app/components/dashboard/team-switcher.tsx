@@ -4,8 +4,6 @@ import {
 	CheckIcon,
 	PlusCircledIcon,
 } from '@radix-ui/react-icons'
-import * as React from 'react'
-
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/avatar'
 import { Button } from '@repo/ui/button'
 import { cn } from '@repo/ui/cn'
@@ -37,6 +35,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@repo/ui/select'
+import * as React from 'react'
 
 const groups = [
 	{
@@ -76,6 +75,8 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 	const [selectedTeam, setSelectedTeam] = React.useState<Team>(
 		groups[0].teams[0],
 	)
+
+	const nameId = React.useId()
 
 	return (
 		<Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
@@ -166,8 +167,8 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 				<div>
 					<div className="space-y-4 py-2 pb-4">
 						<div className="space-y-2">
-							<Label htmlFor="name">Team name</Label>
-							<Input id="name" placeholder="Acme Inc." />
+							<Label htmlFor={nameId}>Team name</Label>
+							<Input id={nameId} placeholder="Acme Inc." />
 						</div>
 						<div className="space-y-2">
 							<Label htmlFor="plan">Subscription plan</Label>

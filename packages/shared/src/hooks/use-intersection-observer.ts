@@ -1,4 +1,4 @@
-import { type RefObject, useEffect, useState } from 'react'
+import { type RefObject, useCallback, useEffect, useState } from 'react'
 
 interface Args extends IntersectionObserverInit {
 	freezeOnceVisible?: boolean
@@ -17,11 +17,12 @@ export default function useIntersectionObserver(
 
 	const frozen = entry?.isIntersecting && freezeOnceVisible
 
-	const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
-		setEntry(entry)
-	}
+	const updateEntry = useCallback(() => {
+		;([entry]: IntersectionObserverEntry[]): void => {
+			setEntry(entry)
+		}
+	}, [])
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const node = elementRef?.current // DOM Ref
 		const hasIOSupport = !!window.IntersectionObserver
@@ -34,7 +35,7 @@ export default function useIntersectionObserver(
 		observer.observe(node)
 
 		return () => observer.disconnect()
-	}, [elementRef, JSON.stringify(threshold), root, rootMargin, frozen])
+	}, [elementRef, threshold, root, rootMargin, frozen, updateEntry])
 
 	return entry
 }
