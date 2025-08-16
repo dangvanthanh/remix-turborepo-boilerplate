@@ -54,7 +54,10 @@ export default function useCurrentAnchor() {
 		const siblings = new Map()
 
 		const anchors = mdxContainer?.querySelectorAll('[data-mdx-heading]')
-		anchors.forEach((anchor, _) => observer.observe(anchor))
+
+		anchors.forEach((anchor, _) => {
+			observer.observe(anchor)
+		})
 
 		return () => {
 			observer.disconnect()

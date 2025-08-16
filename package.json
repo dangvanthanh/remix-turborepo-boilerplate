@@ -14,10 +14,10 @@
 		"@repo/biome-config": "workspace:*",
 		"@repo/typescript-config": "workspace:*",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.1.2",
-		"turbo": "^2.5.4"
+		"lint-staged": "^16.1.5",
+		"turbo": "^2.5.6"
 	},
-	"packageManager": "bun@1.2.16",
+	"packageManager": "bun@1.2.20",
 	"engines": {
 		"node": ">=20"
 	},

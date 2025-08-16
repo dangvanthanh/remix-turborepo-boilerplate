@@ -77,7 +77,9 @@ const paramsMetadata = [
 export function getUrlWithoutUTMParams(url: string) {
 	try {
 		const newURL = new URL(url)
-		paramsMetadata.forEach((param, _) => newURL.searchParams.delete(param.key))
+		paramsMetadata.forEach((param, _) => {
+			newURL.searchParams.delete(param.key)
+		})
 		return newURL.toString()
 	} catch (_e) {
 		return url
